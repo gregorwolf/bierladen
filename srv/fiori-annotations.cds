@@ -2,8 +2,11 @@ using CatalogService as srv from './cat-service';
 
 
 annotate srv.Beers with @(
+  // UI.SelectionFields: [ IDSystem, ContractID, BusinessValidFrom, BusinessValidTo, name, style ],
+
   UI.LineItem: [
-    {$Type: 'UI.DataField', Value: ID    },
+    {$Type: 'UI.DataField', Value: IDSystem    },
+    {$Type: 'UI.DataField', Value: ContractID    },
     {$Type: 'UI.DataField', Value: name  },
     {$Type: 'UI.DataField', Value: brand },
     {$Type: 'UI.DataField', Value: style },
@@ -12,7 +15,7 @@ annotate srv.Beers with @(
 
   UI.HeaderInfo: {
     Title: { Value: name },
-    Description: { Value: ID },
+    Description: { Value: ContractID },
   },
 
   UI.Facets: [
@@ -27,7 +30,12 @@ annotate srv.Beers with @(
   UI.FieldGroup#Data: {
     Label: 'Data',
     Data: [
-    {$Type: 'UI.DataField', Value: ID    },
+    {$Type: 'UI.DataField', Value: IDSystem    },
+    {$Type: 'UI.DataField', Value: ContractID    },
+    {$Type: 'UI.DataField', Value: BusinessValidFrom    },
+    {$Type: 'UI.DataField', Value: BusinessValidTo    },
+    {$Type: 'UI.DataField', Value: SystemValidFrom    },
+    {$Type: 'UI.DataField', Value: SystemValidTo    },
     {$Type: 'UI.DataField', Value: name  },
     {$Type: 'UI.DataField', Value: brand },
     {$Type: 'UI.DataField', Value: style },
