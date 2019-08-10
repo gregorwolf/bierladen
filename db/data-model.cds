@@ -1,6 +1,8 @@
 namespace my.beershop;
 
-entity Beers {
+using { managed } from '@sap/cds/common';
+
+entity Beers : managed {
   key ID : Integer @(
     title: '{i18n>id}',
     description: '{i18n>iddescription}'
