@@ -1,12 +1,12 @@
 namespace my.beershop;
 
-using { managed } from '@sap/cds/common';
+using { managed, cuid } from '@sap/cds/common';
 
-entity Beers : managed {
-  key ID : Integer @(
+entity Beers : cuid, managed {
+  BeerID : Integer @( //> readable key
     title: '{i18n>id}',
     description: '{i18n>iddescription}'
-  );
+  ); 
   name  : String @(
     title: '{i18n>name}',
     description: '{i18n>namedescription}'
